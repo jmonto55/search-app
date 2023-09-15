@@ -18,14 +18,14 @@ const SearchBar = () => {
     dispatch(filterProfiles(newSearch));
   };
 
-  // useEffect(() => {
-  //   const handler = (event) => {
-  //     if (showProfiles && !refSearch.current.contains(event.target)) {
-  //       setShowProfiles(false);
-  //     }
-  //   };
-  //   document.addEventListener('mousedown', handler);
-  // }, [showProfiles]);
+  useEffect(() => {
+    const handler = (event) => {
+      if (showProfiles && refSearch.current && !refSearch.current.contains(event.target)) {
+        setShowProfiles(false);
+      }
+    };
+    document.addEventListener('mousedown', handler);
+  }, [showProfiles]);
 
   return (
     <div ref={refSearch} className="w-5/6 bg-[#010101] mt-[100px] flex flex-col items-center">
@@ -42,7 +42,7 @@ const SearchBar = () => {
       </div>
       {showProfiles && (
         <ul className="w-5/6 max-w-[800px] h-[500px] flex flex-col items-center text-white overflow-y-scroll">
-          { profilesList.map((user) => (
+          {profilesList.map((user) => (
             <NavLink onClick={() => setShowProfiles(false)} key={user.username} to={`https://torre.ai/${user.username}`} target="_blank" className="w-full">
               <Profile user={user} />
             </NavLink>

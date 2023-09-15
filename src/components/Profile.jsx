@@ -1,8 +1,25 @@
 import { useDispatch } from 'react-redux';
 import { toggleFavorite } from '../redux/profiles/profilesSlice';
+import { createFavoriteProfile } from '../redux/profiles/profilesSlice';
 
 const Profile = ({ user }) => {
   const dispatch = useDispatch();
+  
+  const handleFavorite = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    dispatch(toggleFavorite(user));
+
+    const profileData = {
+      name: user.name,
+      username: user.username,
+      role: user.professionalHeadline,
+      picture: user.imageUrl,
+      verified: user.verified,
+    };
+
+    dispatch(createFavoriteProfile(profileData));
+  };
 
   return (
     <div className="z-10 flex items-center w-full bg-neutral-700 cursor-pointer hover:bg-neutral-600 p-3 px-4">
@@ -27,11 +44,7 @@ const Profile = ({ user }) => {
         </div>
         <span
           className="material-symbols-outlined text-[20px] justify-self-end z-40"
-          onClick={(e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            dispatch(toggleFavorite(user));
-          }}
+          onClick={handleFavorite}
         >
           grade
         </span>

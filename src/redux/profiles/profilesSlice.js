@@ -36,6 +36,14 @@ export const filterProfiles = createAsyncThunk(
   },
 );
 
+export const createFavoriteProfile = createAsyncThunk(
+  'profiles/createFavoriteProfile',
+  async (profileData) => {
+    const response = await axios.post('http://localhost:3000/favorite_users', profileData);
+    return response.data;
+  },
+);
+
 const profilesSlice = createSlice({
   name: 'profiles',
   initialState,
