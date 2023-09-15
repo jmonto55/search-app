@@ -5,7 +5,7 @@ const NavBar = () => {
   return (
     <nav className="flex w-full gap-4 text-[#eaeaea] items-center justify-center bg-[#27292d] pt-2">
       <div>
-        <h2>Search</h2>
+        <h2 className="text-xl">Search</h2>
       </div>
       <ul className="flex items-center">
         {links.map((link) => (
