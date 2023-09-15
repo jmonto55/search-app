@@ -5,7 +5,7 @@ import SearchBar from './components/SearchBar';
 
 const App = () => {
   return (
-    <div className="w-screen h-screen bg-[#010101]">
+    <div className="h-screen bg-[#010101]">
       <NavBar />
       <Routes>
         <Route path="/" element={<SearchBar />} />

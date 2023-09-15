@@ -57,7 +57,7 @@ const profilesSlice = createSlice({
         state.status = 'loading';
       })
       .addCase(filterProfiles.fulfilled, (state, action) => {
-        state.isLoading = 'succeeded';
+        state.status = 'succeeded';
         state.profilesList = action.payload;
       })
       .addCase(filterProfiles.rejected, (state, action) => {
