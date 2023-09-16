@@ -5,7 +5,14 @@ export default {
     './src/**/*.{js,jsx,ts,tsx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        xs: "450px",
+      },
+      animation: {
+        'pulse-fast': 'pulse 0.8s ease-out infinite',
+      },
+    },
   },
   plugins: [],
 }

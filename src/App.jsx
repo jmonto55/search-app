@@ -5,7 +5,7 @@ import SearchBar from './components/SearchBar';
 
 const App = () => {
   return (
-    <div className="h-screen flex flex-col items-center bg-[#010101]">
+    <div className="h-screen flex flex-col items-center bg-[#010101] overflow-y-hidden">
       <NavBar />
       <Routes>
         <Route path="/" element={<SearchBar />} />
