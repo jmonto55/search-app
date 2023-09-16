@@ -12,27 +12,23 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
-  - [🚀 Live Demo](#live-demo)
+- [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
   - [Install](#install)
   - [Usage](#usage)
-  - [Run tests](#run-tests)
-  - [Deployment](#triangular_flag_on_post-deployment)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
-- [🤝 Contributing](#contributing)
-- [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
-- [❓ FAQ (OPTIONAL)](#faq)
 - [📝 License](#license)
+
 
 <!-- PROJECT DESCRIPTION -->
 
 # 📖 What is Search App? <a name="about-project"></a>
 
-**Search App** is a full-stack solution that allows users to search any Torre profile by name, favorite the profile and save your most recent searches.
+**Search App** is a full-stack solution that enables users to search any Torre profile by name, favorite profiles, and save their most recent searches.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -66,9 +62,9 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **Users can filter stocks for specific market.**
-- **Users can filter stocks using name or symbol.**
-- **Users can see detailed information about any stock.**
+- **Users can search any Torre profile by name.**
+- **Users can favorite profiles and visit their favorite profiles any time.**
+- **Users can see their 10 most recent searches once they focus in the search bar.**
 - **The application is fully responsive.**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -101,14 +97,14 @@ To get a local copy up and running follow these simple example steps.
 Clone this repository in the desired folder:
 ```
 cd my-folder
-git clone https://github.com/jmonto55/Stock-Viewer.git
+git clone https://github.com/jmonto55/search-app.git
 ```
 
 ### Install
 
 To install this project:
 ```
-cd Stock-Viewer
+cd search-app
 code .
 npm install
 ```
@@ -118,19 +114,9 @@ npm install
 To run the project, execute the following command:
 
 ```
-npm start
+npm run dev
 ```
-
-### Run Tests
-
-To run the project tests, execute the following command:
-
-```
-npm test
-```
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <!-- AUTHORS -->
 
 ## 👥 Authors <a name="authors"></a>
@@ -138,6 +124,7 @@ npm test
 👤 **Jose Montoya**
 
 - GitHub: [@jmonto55](https://github.com/jmonto55)
+- LinkedIn: [@jmontodev](https://www.linkedin.com/in/jmontodev/)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -146,53 +133,19 @@ npm test
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Corrections spotted by reviewer will be implemented**
+- **React components will be refactored to enhance their understandability.**
+- **Unit tests with Jest for every function and snapshots of each component.**
+- **UI tests with Capybara and Selenium to simulate different user routes.**
+- **Animations will be added to enhance user experience.**
+- **Search by role will be available too.**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- CONTRIBUTING -->
-
-## 🤝 Contributing <a name="contributing"></a>
-
-Contributions, issues, and feature requests are welcome!
-
-Feel free to check the [issues page](../../issues/).
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- SUPPORT -->
-
-## ⭐️ Show your support <a name="support"></a>
-
-If you like this project feel free to frok it and use it as you need.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- ACKNOWLEDGEMENTS -->
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank **Nelson Sakwa** for the design
-
-- Behance: [@sakwadesignstudio](https://www.behance.net/sakwadesignstudio)
+I would like to thank **Torre** for their awesome API and test.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- FAQ (optional) -->
-
-## ❓ FAQ (OPTIONAL) <a name="faq"></a>
-
-- **Can I use the project for any purpose?**
-
-  - Yes, you can use this files for anything you need.
-
-- **Is the information saved in any database?**
-
-  - No, all data is fetched from API.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- LICENSE -->
 
 ## 📝 License <a name="license"></a>
 
