@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { toggleFavorite } from '../redux/profiles/profilesSlice';
+// import { toggleFavorite } from '../redux/profiles/profilesSlice';
 import { createFavoriteProfile } from '../redux/profiles/profilesSlice';
 
 const Profile = ({ user }) => {
@@ -8,13 +8,13 @@ const Profile = ({ user }) => {
   const handleFavorite = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    dispatch(toggleFavorite(user));
+    // dispatch(toggleFavorite(user));
 
     const profileData = {
       name: user.name,
       username: user.username,
-      role: user.professionalHeadline,
-      picture: user.imageUrl,
+      professionalHeadline: user.professionalHeadline,
+      imageUrl: user.imageUrl,
       verified: user.verified,
     };
 

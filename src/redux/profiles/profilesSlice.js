@@ -21,7 +21,7 @@ function fetchProfiles(query) {
     identityType: 'person',
     meta: false,
     limit: 10,
-    torreGgId: '1562283',
+    torreGgId: '1420940',
     excludeContacts: true,
     excludedPeople: [],
   });
@@ -44,21 +44,17 @@ export const createFavoriteProfile = createAsyncThunk(
   },
 );
 
+export const fetchFavoriteProfiles = createAsyncThunk(
+  'profiles/fetchFavoriteProfiles',
+  async () => {
+    const response = await axios.get('http://localhost:3000/favorite_users');
+    return response.data;
+  },
+);
+
 const profilesSlice = createSlice({
   name: 'profiles',
   initialState,
-  reducers: {
-    toggleFavorite(state, action) {
-      const index = state.favoriteProfiles.findIndex(
-        (favorite) => favorite.ardaId === action.payload.ardaId,
-      );
-      if (index >= 0) {
-        state.favoriteProfiles.splice(index, 1);
-      } else {
-        state.favoriteProfiles.push(action.payload);
-      }
-    },
-  },
   extraReducers: (builder) => {
     builder
       .addCase(filterProfiles.pending, (state) => {
@@ -69,6 +65,17 @@ const profilesSlice = createSlice({
         state.profilesList = action.payload;
       })
       .addCase(filterProfiles.rejected, (state, action) => {
+        state.status = 'failed';
+        state.error = action.error.message;
+      })
+      .addCase(fetchFavoriteProfiles.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(fetchFavoriteProfiles.fulfilled, (state, action) => {
+        state.status = 'succeeded';
+        state.favoriteProfiles = action.payload;
+      })
+      .addCase(fetchFavoriteProfiles.rejected, (state, action) => {
         state.status = 'failed';
         state.error = action.error.message;
       });
