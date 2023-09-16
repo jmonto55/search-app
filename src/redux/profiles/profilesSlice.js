@@ -40,7 +40,7 @@ export const filterProfiles = createAsyncThunk(
 export const createFavoriteProfile = createAsyncThunk(
   'profiles/createFavoriteProfile',
   async (profileData) => {
-    const response = await axios.post('http://localhost:3000/favorite_users', profileData);
+    const response = await axios.post('https://rails-9g6m.onrender.com/favorite_users', profileData);
     return response.data;
   },
 );
@@ -48,7 +48,7 @@ export const createFavoriteProfile = createAsyncThunk(
 export const createLastSearched = createAsyncThunk(
   'profiles/createLastSearched',
   async (profileData) => {
-    const response = await axios.post('http://localhost:3000/last_searcheds', profileData);
+    const response = await axios.post('https://rails-9g6m.onrender.com/last_searcheds', profileData);
     return response.data;
   },
 );
@@ -56,7 +56,7 @@ export const createLastSearched = createAsyncThunk(
 export const fetchFavoriteProfiles = createAsyncThunk(
   'profiles/fetchFavoriteProfiles',
   async () => {
-    const response = await axios.get('http://localhost:3000/favorite_users');
+    const response = await axios.get('https://rails-9g6m.onrender.com/favorite_users');
     return response.data;
   },
 );
@@ -64,7 +64,7 @@ export const fetchFavoriteProfiles = createAsyncThunk(
 export const fetchLastSearched = createAsyncThunk(
   'profiles/fetchLastSearched',
   async () => {
-    const response = await axios.get('http://localhost:3000/last_searcheds');
+    const response = await axios.get('https://rails-9g6m.onrender.com/last_searcheds');
     return response.data;
   },
 );
