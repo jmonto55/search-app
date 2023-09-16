@@ -4,6 +4,7 @@ import axios from 'axios';
 const initialState = {
   profilesList: [],
   favoriteProfiles: [],
+  lastProfiles: [],
   status: '',
   error: null,
 };
@@ -44,10 +45,26 @@ export const createFavoriteProfile = createAsyncThunk(
   },
 );
 
+export const createLastSearched = createAsyncThunk(
+  'profiles/createLastSearched',
+  async (profileData) => {
+    const response = await axios.post('http://localhost:3000/last_searcheds', profileData);
+    return response.data;
+  },
+);
+
 export const fetchFavoriteProfiles = createAsyncThunk(
   'profiles/fetchFavoriteProfiles',
   async () => {
     const response = await axios.get('http://localhost:3000/favorite_users');
+    return response.data;
+  },
+);
+
+export const fetchLastSearched = createAsyncThunk(
+  'profiles/fetchLastSearched',
+  async () => {
+    const response = await axios.get('http://localhost:3000/last_searcheds');
     return response.data;
   },
 );
@@ -76,6 +93,17 @@ const profilesSlice = createSlice({
         state.favoriteProfiles = action.payload;
       })
       .addCase(fetchFavoriteProfiles.rejected, (state, action) => {
+        state.status = 'failed';
+        state.error = action.error.message;
+      })
+      .addCase(fetchLastSearched.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(fetchLastSearched.fulfilled, (state, action) => {
+        state.status = 'succeeded';
+        state.lastProfiles = action.payload;
+      })
+      .addCase(fetchLastSearched.rejected, (state, action) => {
         state.status = 'failed';
         state.error = action.error.message;
       });
